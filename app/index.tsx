@@ -15,16 +15,32 @@ export default function Page() {
         colorScheme === "light"
           ? { backgroundColor: "#fff" }
           : { backgroundColor: "#333333" },
+        //  If colorScheme equal to  light then bg = black else bg = light
       ]}>
-      {/* <View style={styles.container}> */}
       <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>
+        <Text
+          style={[
+            styles.title,
+            colorScheme === "light" ? { color: "black" } : { color: "white" },
+          ]}>
+          Hello World
+        </Text>
+        <Text
+          style={[
+            styles.subtitle,
+            colorScheme === "light" ? { color: "black" } : { color: "white" },
+          ]}>
           You Can Change the mode using Theme button By scrolling down
         </Text>
       </View>
       {/* </View> */}
-      <Text style={styles.regular}>Color Scheme: {colorScheme}</Text>
+      <Text
+        style={[
+          styles.regular,
+          colorScheme === "light" ? { color: "black" } : { color: "white" },
+        ]}>
+        Color Scheme: {colorScheme}
+      </Text>
     </ScrollView>
   );
 }
